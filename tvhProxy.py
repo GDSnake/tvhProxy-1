@@ -16,7 +16,9 @@ config = {
     'tunerCount': os.environ.get('TVH_TUNER_COUNT') or 6,  # number of tuners in tvh
     'tvhWeight': os.environ.get('TVH_WEIGHT') or 300,  # subscription priority
     'chunkSize': os.environ.get('TVH_CHUNK_SIZE') or 1024*1024,  # usually you don't need to edit this
-    'streamProfile': os.environ.get('TVH_PROFILE') or 'pass'  # specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4
+    'streamProfile': os.environ.get('TVH_PROFILE') or 'pass',  # specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4
+    'tunerId': os.environ.get('TUNER_ID') or 12345678
+
 }
 
 discoverData = {
@@ -26,7 +28,7 @@ discoverData = {
     'FirmwareName': 'hdhomeruntc_atsc',
     'TunerCount': int(config['tunerCount']),
     'FirmwareVersion': '20150826',
-    'DeviceID': '12345678',
+    'DeviceID': '%s' % config['tunerId'],
     'DeviceAuth': 'test1234',
     'BaseURL': '%s' % config['tvhProxyURL'],
     'LineupURL': '%s/lineup.json' % config['tvhProxyURL']
