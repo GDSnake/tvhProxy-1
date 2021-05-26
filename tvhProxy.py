@@ -17,7 +17,7 @@ config = {
     'tvhWeight': os.environ.get('TVH_WEIGHT') or 300,  # subscription priority
     'chunkSize': os.environ.get('TVH_CHUNK_SIZE') or 1024*1024,  # usually you don't need to edit this
     'streamProfile': os.environ.get('TVH_PROFILE') or 'pass',  # specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4
-    'tunerId': os.environ.get('TUNER_ID') or 12345678
+    'tunerId': os.environ.get('TUNER_ID') or '12345678'
 
 }
 
